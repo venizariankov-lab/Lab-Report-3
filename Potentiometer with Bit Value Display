@@ -1,0 +1,90 @@
+/*  
+
+ 
+ 
+
+ Potentiometer Bit Value Display  
+
+ 
+ 
+
+ Goal of the program : Reads the value coming from a potentiometer and shows the 10-bit result (0 to 1023) on the Serial Monitor.  
+
+ 
+ 
+
+ Themes : Analog Input  
+
+ 
+ 
+
+*/ 
+
+ 
+ 
+
+// Sets the pin used to read the potentiometer’s signal 
+
+int sensorPin = A0; 
+
+ 
+ 
+
+// Creates a variable that will store the value read from the potentiometer 
+
+int sensorValue = 0; 
+
+ 
+ 
+ 
+
+void setup() { 
+
+ 
+ 
+
+  // Initializes the pin connected to the potentiometer as an input 
+
+  pinMode(sensorPin, INPUT); 
+
+ 
+ 
+
+  // Starts the communication with the Serial Monitor at a baud rate of 9600 
+
+  Serial.begin(9600); 
+
+ 
+ 
+
+} 
+
+ 
+ 
+ 
+
+void loop() { 
+
+ 
+ 
+
+  // Reads the analog value from the potentiometer and converts it to a number between 0 and 1023 (10-bit) 
+
+  sensorValue = analogRead(sensorPin); 
+
+ 
+ 
+
+  // Sends the value to the Serial Monitor so the user can see it update in real time 
+
+  Serial.println(sensorValue); 
+
+ 
+ 
+
+} 
+
+ 
+ 
+
+ 
